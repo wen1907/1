@@ -843,11 +843,7 @@ a{color:inherit;text-decoration:none;}
   var wishInput = document.getElementById('wishInput');
   var wishSend = document.getElementById('wishSend');
   var wishList = document.getElementById('wishList');
-  var wishes = [
-    { who:'好友 · 阿哲', msg:'愿你们的爱情如美酒，越久越醇，白首不相离。' },
-    { who:'表姐 · 晓雯', msg:'祝福新郎新娘百年好合，永结同心，幸福美满！' },
-    { who:'大学室友 · 磊子', msg:'从校园到婚礼，见证你们一路走来，替你们开心！' }
-  ];
+  var wishes = [];
   function renderWishes(){
     wishList.innerHTML = '';
     if(!wishes.length){
