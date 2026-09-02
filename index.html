@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="description" content="我们结婚啦！诚邀您见证温鹏晖与刘梦的幸福时刻。2026年10月23日，信阳市光山县元平大酒店。">
+<title>温鹏晖 &amp; 刘梦 · 婚礼邀请函</title>
+<!-- Web 字体（妙搭自托管镜像） -->
+<link rel="stylesheet" href="https://miaoda.feishu.cn/fonts/css2?family=Great+Vibes&family=Noto+Serif+SC:wght@400;600;700;900&family=Noto+Sans+SC:wght@300;400;500;700&display=swap">
+<style>
+/* ============ 设计令牌 ============ */
+:root{
+  --cream:#FBF6EF;
+  --card:#FFFDF8;
+  --gold:#C9A15C;
+  --gold-deep:#A98345;
+  --gold-light:#EAD9B4;
+  --gold-faint:#F3E8D2;
+  --rose:#C9898F;
+  --rose-deep:#B06E76;
+  --rose-light:#F2E0DC;
+  --rose-faint:#FAEDEA;
+  --ink:#4B3B33;
+  --ink-soft:#8A7568;
+  --line:rgba(201,161,92,.28);
+  --shadow:0 18px 50px rgba(176,110,118,.14);
+  --serif:'Noto Serif SC','Songti SC','SimSun',serif;
+  --sans:'Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;
+  --script:'Great Vibes','Noto Serif SC',cursive;
+}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:var(--sans);
+  background:#EFE4DA;
+  color:var(--ink);
+  line-height:1.6;
+  overflow-x:hidden;
+}
+/* 页面容器：移动端优先，居中限宽 */
+.stage{
+  max-width:520px;
+  margin:0 auto;
+  background:var(--cream);
+  min-height:100vh;
+  position:relative;
+  box-shadow:0 0 60px rgba(74,49,37,.18);
+}
+img{display:block;max-width:100%;}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit;}
+a{color:inherit;text-decoration:none;}
+
+/* ============ 氛围：飘落花瓣 ============ */
+#petalLayer{position:fixed;inset:0;pointer-events:none;z-index:40;overflow:hidden;}
+.petal{
+  position:absolute;top:-40px;
+  width:14px;height:18px;
+  background:linear-gradient(135deg,#F3D9D4,#E0B2A9);
+  border-radius:80% 0 80% 0;
+  opacity:0;
+  animation:petalFall linear infinite;
+}
+@keyframes petalFall{
+  0%{transform:translateY(-6vh) rotate(0deg);opacity:0;}
+  12%{opacity:.75;}
+  100%{transform:translateY(108vh) rotate(360deg);opacity:0;}
+}
+
+/* ============ 浮动音乐按钮 ============ */
+#musicBtn{
+  position:fixed;right:16px;bottom:calc(24px + env(safe-area-inset-bottom));
+  width:52px;height:52px;border-radius:50%;
+  background:linear-gradient(135deg,var(--gold),var(--gold-deep));
+  color:#fff;z-index:60;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 8px 22px rgba(169,131,69,.45);
+  transition:transform .25s ease;
+}
+#musicBtn:active{transform:scale(.9);}
+#musicBtn svg{width:24px;height:24px;}
+#musicBtn .pauseIcon{display:none;}
+#musicBtn.playing .pauseIcon{display:block;}
+#musicBtn.playing .playIcon{display:none;}
+#musicBtn.playing{animation:spinPulse 3s linear infinite;}
+@keyframes spinPulse{
+  0%,100%{box-shadow:0 8px 22px rgba(169,131,69,.45);}
+  50%{box-shadow:0 8px 30px rgba(201,137,143,.6);}
+}
+
+/* ============ 通用区块 ============ */
+.section{position:relative;padding:64px 26px 56px;}
+.section-head{text-align:center;margin-bottom:38px;}
+.eyebrow{
+  font-size:11px;letter-spacing:.42em;color:var(--gold-deep);
+  text-transform:uppercase;margin-bottom:12px;
+}
+.sec-title{
+  font-family:var(--serif);font-size:30px;font-weight:700;color:var(--ink);
+  letter-spacing:.08em;
+}
+.sec-title .en{
+  display:block;font-family:var(--script);font-weight:400;
+  font-size:26px;color:var(--rose);letter-spacing:.05em;margin-bottom:6px;
+}
+.sec-rule{
+  width:64px;height:1px;background:var(--line);
+  margin:18px auto 0;position:relative;
+}
+.sec-rule::before,.sec-rule::after{
+  content:"";position:absolute;top:-3px;width:7px;height:7px;
+  background:var(--gold);border-radius:50%;opacity:.7;
+}
+.sec-rule::before{left:-4px;} .sec-rule::after{right:-4px;}
+.mono{
+  width:88px;height:88px;margin:0 auto 20px;
+  border:1px solid var(--line);border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  color:var(--gold-deep);position:relative;
+}
+.mono::before{content:"";position:absolute;inset:7px;border:1px dashed rgba(201,161,92,.5);border-radius:50%;}
+.mono svg{width:40px;height:40px;}
+
+/* 滚动显现 */
+.reveal{opacity:0;transform:translateY(34px);transition:opacity .8s ease,transform .8s ease;}
+.reveal.in{opacity:1;transform:none;}
+.reveal.d1{transition-delay:.12s;} .reveal.d2{transition-delay:.24s;} .reveal.d3{transition-delay:.36s;}
+
+/* ============ 1 封面 ============ */
+#cover{
+  min-height:100vh;min-height:100svh;
+  display:flex;flex-direction:column;align-items:center;justify-content:space-between;
+  text-align:center;position:relative;overflow:hidden;
+  padding:calc(64px + env(safe-area-inset-top)) 26px calc(48px + env(safe-area-inset-bottom));
+  background:#3a2a24;
+}
+#cover .cover-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.9;}
+#cover::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(58,42,36,.35) 0%,rgba(58,42,36,.08) 38%,rgba(201,137,143,.32) 100%);
+}
+#cover .cover-inner{position:relative;z-index:2;width:100%;}
+@keyframes coverFade{
+  from{opacity:0;transform:translateY(22px);}
+  to{opacity:1;transform:translateY(0);}
+}
+.cover-top,.cover-mono,.cover-names,.cover-amp,.cover-date,.cover-enter .hint,.open-btn,.arrow-down{
+  opacity:0;
+  animation:coverFade .9s cubic-bezier(.22,.61,.36,1) forwards;
+}
+.cover-top{animation-delay:.2s;}
+.cover-mono{animation-delay:.5s;}
+.cover-inner > div:nth-child(3){animation-delay:.85s;}
+.cover-amp{animation-delay:1.15s;}
+.cover-inner > div:nth-child(5){animation-delay:1.4s;}
+.cover-date{animation-delay:1.7s;}
+.cover-enter .hint{animation-delay:2.1s;}
+.open-btn{animation-delay:2.4s;}
+.arrow-down{animation-delay:2.8s;}
+.cover-top{color:#F7EBD9;font-size:12px;letter-spacing:.5em;}
+.cover-mono{
+  width:96px;height:96px;margin:0 auto 26px;border-radius:50%;
+  border:1px solid rgba(247,235,217,.6);
+  display:flex;align-items:center;justify-content:center;
+  color:#F7EBD9;
+}
+.cover-mono svg{width:44px;height:44px;}
+.cover-names{
+  font-family:var(--serif);color:#FFF8EC;font-size:44px;font-weight:700;
+  letter-spacing:.18em;line-height:1.25;
+}
+.cover-amp{font-family:var(--script);color:#EFD9A7;font-size:40px;font-weight:400;margin:2px 0;}
+.cover-date{
+  margin-top:26px;color:#F4E3C4;font-size:14px;letter-spacing:.34em;font-family:var(--serif);
+}
+.cover-date .dy{display:block;font-family:var(--script);color:#F0DCA6;font-size:34px;letter-spacing:.06em;margin-bottom:4px;}
+.cover-enter{
+  position:relative;z-index:2;margin-top:auto;padding-top:34px;
+  display:flex;flex-direction:column;align-items:center;color:#F7EBD9;
+}
+.cover-enter .hint{font-size:12px;letter-spacing:.34em;margin-bottom:14px;}
+.open-btn{
+  width:148px;height:148px;border-radius:50%;
+  border:1px solid rgba(247,235,217,.55);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  color:#FFF6E6;background:rgba(74,48,38,.12);
+  backdrop-filter:blur(2px);
+  transition:transform .3s ease,background .3s ease;
+}
+.open-btn:active{transform:scale(.93);background:rgba(201,137,143,.25);}
+.open-btn .cn{font-family:var(--serif);font-size:18px;letter-spacing:.24em;}
+.open-btn .en{font-family:var(--script);font-size:20px;color:#F0DCA6;margin-top:6px;}
+.arrow-down{animation:bob 1.8s ease-in-out infinite;margin-top:14px;}
+@keyframes bob{0%,100%{transform:translateY(0);}50%{transform:translateY(8px);}}
+
+/* ============ 2 邀请函 ============ */
+#invite{background:var(--cream);}
+.invite-card{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:20px;
+  padding:44px 30px 40px;
+  text-align:center;
+  position:relative;
+  box-shadow:var(--shadow);
+}
+.invite-card::before{
+  content:"";position:absolute;inset:9px;border:1px solid rgba(201,161,92,.28);border-radius:14px;pointer-events:none;
+}
+.invite-top{font-family:var(--script);font-size:34px;color:var(--rose);line-height:1.2;}
+.invite-headline{font-family:var(--serif);font-size:19px;font-weight:700;letter-spacing:.04em;margin:16px 0 8px;}
+.invite-names{font-family:var(--serif);font-size:34px;font-weight:700;letter-spacing:.1em;margin:6px 0 2px;}
+.invite-amp{font-family:var(--script);font-size:28px;color:var(--gold-deep);}
+.invite-when{
+  margin:22px auto 0;border-top:1px dashed var(--line);border-bottom:1px dashed var(--line);
+  padding:16px 0;color:var(--ink-soft);font-size:15px;
+}
+.invite-when strong{display:block;color:var(--ink);font-family:var(--serif);font-size:17px;letter-spacing:.04em;margin-top:4px;}
+.invite-words{margin-top:22px;color:var(--ink-soft);font-size:15px;line-height:2;}
+.invite-sign{margin-top:22px;font-family:var(--serif);letter-spacing:.28em;font-size:14px;color:var(--gold-deep);}
+
+/* ============ 3 婚礼信息 ============ */
+#info{background:linear-gradient(180deg,var(--cream) 0%,var(--rose-faint) 100%);}
+.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.info-card{
+  background:var(--card);border:1px solid var(--line);border-radius:16px;
+  padding:24px 16px;text-align:center;
+}
+.info-card.wide{grid-column:1 / -1;}
+.info-ico{width:44px;height:44px;margin:0 auto 12px;color:var(--gold-deep);}
+.info-ico svg{width:100%;height:100%;}
+.info-label{font-size:12px;letter-spacing:.28em;color:var(--rose-deep);margin-bottom:8px;}
+.info-val{font-family:var(--serif);font-size:19px;font-weight:700;color:var(--ink);}
+.info-sub{font-size:13px;color:var(--ink-soft);margin-top:6px;}
+.info-tip{
+  margin-top:20px;text-align:center;font-size:12.5px;color:var(--ink-soft);
+  letter-spacing:.08em;
+}
+
+/* ============ 4 倒计时 ============ */
+#countdown{background:var(--rose-faint);}
+.cd-panel{
+  background:var(--card);border:1px solid var(--line);border-radius:20px;
+  padding:36px 22px 32px;box-shadow:var(--shadow);text-align:center;
+}
+.cd-caption{font-size:13px;letter-spacing:.3em;color:var(--ink-soft);margin-bottom:24px;}
+.cd-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;}
+.cd-cell{
+  background:linear-gradient(180deg,#FFFDF8,#FAF1E4);
+  border:1px solid var(--line);border-radius:14px;padding:18px 6px 14px;
+}
+.cd-num{font-family:var(--serif);font-size:38px;font-weight:900;color:var(--gold-deep);line-height:1;}
+.cd-unit{font-size:12px;letter-spacing:.24em;color:var(--ink-soft);margin-top:8px;}
+.cd-date{margin-top:20px;font-family:var(--serif);font-size:16px;color:var(--rose-deep);letter-spacing:.14em;}
+
+/* ============ 5 相册 ============ */
+#album{background:linear-gradient(180deg,var(--rose-faint),var(--cream));}
+.album-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.album-grid .ph:nth-child(3n){grid-column:1 / -1;}
+.ph{border-radius:14px;overflow:hidden;border:1px solid var(--line);box-shadow:0 10px 26px rgba(176,110,118,.14);position:relative;}
+.ph img{width:100%;height:170px;object-fit:cover;transition:transform .5s ease;}
+.album-grid .ph:nth-child(3n) img{height:240px;}
+.ph::after{content:"放大查看";position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+  color:#fff;font-size:13px;letter-spacing:.2em;background:rgba(74,48,38,.28);opacity:0;transition:opacity .3s ease;}
+.ph:hover::after{opacity:1;}
+.album-note{margin-top:18px;text-align:center;font-size:12.5px;color:var(--ink-soft);letter-spacing:.06em;}
+/* 灯箱 */
+#lightbox{
+  position:fixed;inset:0;background:rgba(30,20,16,.92);z-index:80;
+  display:none;align-items:center;justify-content:center;padding:24px;
+}
+#lightbox.open{display:flex;}
+#lightbox img{max-width:100%;max-height:82vh;border-radius:12px;box-shadow:0 20px 60px rgba(0,0,0,.5);}
+#lightbox .lb-close{
+  position:absolute;top:calc(18px + env(safe-area-inset-top));right:20px;
+  width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.14);color:#fff;
+  font-size:22px;display:flex;align-items:center;justify-content:center;
+}
+#lightbox .lb-caption{position:absolute;bottom:calc(30px + env(safe-area-inset-bottom));color:#EFE2CC;font-size:14px;letter-spacing:.1em;}
+
+/* ============ 7 婚礼流程 ============ */
+#schedule{background:var(--cream);}
+.sch-card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:32px 26px;box-shadow:var(--shadow);}
+.sch-row{display:flex;align-items:center;gap:18px;padding:16px 0;border-bottom:1px dashed var(--line);}
+.sch-row:last-child{border-bottom:none;}
+.sch-time{font-family:var(--serif);font-size:22px;font-weight:700;color:var(--gold-deep);min-width:76px;}
+.sch-time small{display:block;font-size:11px;color:var(--ink-soft);font-weight:400;letter-spacing:.1em;}
+.sch-ico{width:38px;height:38px;color:var(--rose);flex:none;}
+.sch-ico svg{width:100%;height:100%;}
+.sch-name{font-family:var(--serif);font-size:17px;font-weight:700;}
+.sch-desc{font-size:13px;color:var(--ink-soft);}
+
+/* ============ 8 出席回执 ============ */
+#rsvp{background:linear-gradient(180deg,var(--cream) 0%,var(--rose-faint) 100%);}
+.rsvp-form{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:30px 24px;box-shadow:var(--shadow);}
+.f-group{margin-bottom:18px;}
+.f-label{display:block;font-size:13px;letter-spacing:.12em;color:var(--ink-soft);margin-bottom:8px;}
+.f-label b{color:var(--rose-deep);}
+.f-input,.f-select,.f-textarea{
+  width:100%;border:1px solid rgba(201,161,92,.4);border-radius:12px;
+  background:#FFFDF8;padding:13px 14px;font-size:15px;font-family:inherit;color:var(--ink);
+  outline:none;transition:border-color .2s ease;
+}
+.f-input:focus,.f-select:focus,.f-textarea:focus{border-color:var(--gold-deep);}
+.f-textarea{resize:vertical;min-height:84px;}
+.f-radio{display:flex;gap:10px;}
+.f-radio label{
+  flex:1;border:1px solid rgba(201,161,92,.4);border-radius:12px;padding:13px 0;text-align:center;
+  font-size:15px;color:var(--ink-soft);cursor:pointer;transition:all .2s ease;
+}
+.f-radio input{display:none;}
+.f-radio input:checked + span{color:#fff;}
+.f-radio label:has(input:checked){background:linear-gradient(135deg,var(--rose),var(--rose-deep));border-color:var(--rose);}
+.submit-btn{
+  width:100%;padding:16px;border-radius:14px;margin-top:8px;
+  background:linear-gradient(135deg,var(--gold),var(--gold-deep));color:#fff;
+  font-size:17px;letter-spacing:.3em;font-family:var(--serif);
+  box-shadow:0 10px 24px rgba(169,131,69,.4);
+  transition:transform .2s ease,box-shadow .2s ease;
+}
+.submit-btn:active{transform:scale(.97);}
+.rsvp-ok{
+  display:none;text-align:center;padding:26px 10px;
+}
+.rsvp-ok.show{display:block;}
+.rsvp-ok .heart{width:56px;height:56px;margin:0 auto 16px;color:var(--rose);}
+.rsvp-ok .ok-title{font-family:var(--serif);font-size:21px;font-weight:700;letter-spacing:.14em;margin-bottom:10px;}
+.rsvp-ok .ok-text{color:var(--ink-soft);font-size:14px;line-height:1.9;}
+.rsvp-tip{margin-top:16px;text-align:center;font-size:12px;color:var(--ink-soft);letter-spacing:.04em;}
+
+/* ============ 9 一键导航 ============ */
+#map{background:var(--cream);}
+.map-card{background:var(--card);border:1px solid var(--line);border-radius:20px;overflow:hidden;box-shadow:var(--shadow);}
+.map-banner{position:relative;height:190px;overflow:hidden;}
+.map-banner img{width:100%;height:100%;object-fit:cover;}
+.map-banner::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(58,42,36,.35));}
+.map-banner .pin{
+  position:absolute;left:50%;top:46%;transform:translate(-50%,-50%);
+  width:52px;height:52px;color:var(--rose-deep);filter:drop-shadow(0 4px 8px rgba(0,0,0,.3));
+  animation:bob 2.2s ease-in-out infinite;
+}
+.map-info{padding:22px 22px 26px;}
+.map-name{font-family:var(--serif);font-size:21px;font-weight:700;letter-spacing:.06em;}
+.map-star{color:var(--gold-deep);font-size:13px;letter-spacing:.1em;margin:6px 0 14px;}
+.map-rows{font-size:14px;color:var(--ink-soft);line-height:2;}
+.map-rows .row{display:flex;gap:10px;align-items:flex-start;}
+.map-rows .row svg{width:18px;height:18px;flex:none;margin-top:6px;color:var(--gold-deep);}
+.map-btns{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:20px;}
+.map-btn{
+  padding:15px 8px;border-radius:14px;text-align:center;font-size:15px;letter-spacing:.1em;
+  transition:transform .2s ease;
+}
+.map-btn:active{transform:scale(.95);}
+.map-btn.primary{background:linear-gradient(135deg,var(--gold),var(--gold-deep));color:#fff;box-shadow:0 8px 20px rgba(169,131,69,.4);}
+.map-btn.ghost{border:1px solid var(--gold);color:var(--gold-deep);}
+.map-tip{margin-top:16px;text-align:center;font-size:12px;color:var(--ink-soft);letter-spacing:.04em;}
+
+/* ============ 10 祝福留言 / 结尾 ============ */
+#wishes{background:linear-gradient(180deg,var(--cream) 0%,var(--rose-faint) 100%);}
+.wish-form{display:flex;gap:10px;margin-bottom:22px;}
+.wish-form .f-input{flex:1;}
+.wish-send{
+  padding:0 22px;border-radius:12px;background:var(--rose);color:#fff;
+  font-size:15px;letter-spacing:.08em;
+}
+.wish-send:active{transform:scale(.95);}
+.wish-list{display:flex;flex-direction:column;gap:12px;}
+.wish-card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;}
+.wish-card .who{font-size:13px;color:var(--gold-deep);letter-spacing:.08em;margin-bottom:6px;}
+.wish-card .msg{font-size:14.5px;color:var(--ink);line-height:1.8;}
+.wish-empty{text-align:center;color:var(--ink-soft);font-size:14px;padding:30px 0;}
+
+/* 结尾 */
+.finale{text-align:center;padding:70px 26px calc(70px + env(safe-area-inset-bottom));background:var(--cream);}
+.finale .script{font-family:var(--script);font-size:40px;color:var(--rose);}
+.finale .serif{font-family:var(--serif);font-size:17px;color:var(--ink);letter-spacing:.2em;margin-top:10px;}
+.finale .heart{width:26px;height:26px;margin:18px auto;color:var(--gold-deep);}
+.finale .thanks{font-size:13.5px;color:var(--ink-soft);line-height:2;}
+.finale .copy{font-size:11.5px;color:#B7A692;letter-spacing:.1em;margin-top:26px;}
+
+/* 移动端细节 */
+@media (max-width:380px){
+  .cover-names{font-size:36px;}
+  .cd-num{font-size:32px;}
+  .sec-title{font-size:26px;}
+}
+@media (prefers-reduced-motion: reduce){
+  *{animation:none !important;transition:none !important;}
+}
+</style>
+</head>
+<body>
+
+<!-- ===== 背景音乐 ===== -->
+<audio id="bgMusic" loop preload="auto">
+  <source src="https://aka.doubaocdn.com/s/JGatGUnq49" type="audio/mpeg">
+</audio>
+
+<!-- ===== 飘落花瓣 ===== -->
+<div id="petalLayer" aria-hidden="true"></div>
+
+<!-- ===== 浮动音乐按钮 ===== -->
+<button id="musicBtn" aria-label="播放或暂停背景音乐" title="背景音乐">
+  <svg class="playIcon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.14v13.72c0 .8.87 1.3 1.56.9l11-6.86a1.05 1.05 0 0 0 0-1.8l-11-6.86A1.05 1.05 0 0 0 8 5.14z"/></svg>
+  <svg class="pauseIcon" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg>
+</button>
+
+<!-- ===== 灯箱 ===== -->
+<div id="lightbox" role="dialog" aria-modal="true">
+  <button class="lb-close" aria-label="关闭">&times;</button>
+  <img id="lbImg" src="" alt="照片大图">
+  <div class="lb-caption" id="lbCaption"></div>
+</div>
+
+<div class="stage">
+
+  <!-- ============ 1 封面 ============ -->
+  <section id="cover">
+    <img class="cover-bg" src="https://aka.doubaocdn.com/s/LI7e3nEfQt" alt="婚礼封面背景">
+    <div class="cover-inner">
+      <div class="cover-top">INVITATION&nbsp;&nbsp;&middot;&nbsp;&nbsp;婚礼邀请</div>
+      <div class="cover-mono">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 21s-7.5-4.8-9.4-9.2C1 8 3 5 6 5c2 0 3.2 1.2 4 2.6C10.8 6.2 12 5 14 5c3 0 5 3 3.4 6.8C15.5 16.2 12 21 12 21z"/></svg>
+      </div>
+      <div class="cover-names">温鹏晖</div>
+      <div class="cover-amp">&amp;</div>
+      <div class="cover-names">刘梦</div>
+      <div class="cover-date">
+        <span class="dy">We are getting married</span>
+        2026 . 10 . 23
+      </div>
+    </div>
+    <div class="cover-enter">
+      <div class="hint">轻触开启音乐与邀请函</div>
+      <button class="open-btn" id="openBtn">
+        <span class="cn">开启邀请</span>
+        <span class="en">Open the Vow</span>
+      </button>
+      <svg class="arrow-down" width="22" height="30" viewBox="0 0 24 24" fill="none" stroke="#F7EBD9" stroke-width="1.4"><path d="M12 4v14m0 0-5-5m5 5 5-5"/></svg>
+    </div>
+  </section>
+
+  <!-- ============ 2 邀请函 ============ -->
+  <section id="invite" class="section">
+    <div class="invite-card reveal">
+      <div class="invite-top">You are cordially invited</div>
+      <div class="invite-headline">谨定于公历二零二六年十月二十三日</div>
+      <div class="invite-names">温鹏晖 <span class="invite-amp">&amp;</span> 刘梦</div>
+      <div class="invite-when">
+        举行结婚典礼
+        <strong>2026年10月23日 · 农历九月十四</strong>
+      </div>
+      <div class="invite-words">
+        在这浪漫的季节里<br>
+        我们将携手步入婚姻的殿堂<br>
+        诚邀您前来见证我们的幸福时刻<br>
+        与我们一起分享这份喜悦
+      </div>
+      <div class="invite-sign">温鹏晖 &amp; 刘梦 · 敬邀</div>
+    </div>
+  </section>
+
+  <!-- ============ 3 婚礼信息 ============ -->
+  <section id="info" class="section">
+    <div class="section-head reveal">
+      <div class="eyebrow">When &amp; Where</div>
+      <div class="sec-title"><span class="en">Save the Date</span>婚礼信息</div>
+      <div class="sec-rule"></div>
+    </div>
+    <div class="info-grid">
+      <div class="info-card reveal">
+        <div class="info-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg></div>
+        <div class="info-label">日期</div>
+        <div class="info-val">10 月 23 日</div>
+        <div class="info-sub">星期五 · 2026</div>
+      </div>
+      <div class="info-card reveal d1">
+        <div class="info-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 11v6"/><circle cx="12" cy="8" r=".6" fill="currentColor"/></svg></div>
+        <div class="info-label">仪式</div>
+        <div class="info-val">11 : 00</div>
+        <div class="info-sub">吉时举行仪式</div>
+      </div>
+      <div class="info-card reveal d2">
+        <div class="info-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M9 20v-6h6v6"/></svg></div>
+        <div class="info-label">地点</div>
+        <div class="info-val">光山县</div>
+        <div class="info-sub">元平大酒店</div>
+      </div>
+      <div class="info-card reveal d3">
+        <div class="info-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 20h16"/><path d="M6 20V9l6-5 6 5v11"/><circle cx="12" cy="14" r="1.6"/></svg></div>
+        <div class="info-label">宴席</div>
+        <div class="info-val">12 : 00</div>
+        <div class="info-sub">喜宴开席</div>
+      </div>
+      <div class="info-card wide reveal">
+        <div class="info-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-7.5-4.8-9.4-9.2C1 8 3 5 6 5c2 0 3.2 1.2 4 2.6C10.8 6.2 12 5 14 5c3 0 5 3 3.4 6.8C15.5 16.2 12 21 12 21z"/></svg></div>
+        <div class="info-label">诚挚邀请</div>
+        <div class="info-val">信阳市光山县 · 元平大酒店</div>
+        <div class="info-sub">弦山街道光山国际会展中心 7 号楼</div>
+      </div>
+    </div>
+    <div class="info-tip reveal">期待与您共赴这场浪漫之约</div>
+  </section>
+
+  <!-- ============ 4 倒计时 ============ -->
+  <section id="countdown" class="section">
+    <div class="section-head reveal">
+      <div class="eyebrow">Countdown</div>
+      <div class="sec-title"><span class="en">Waiting for the Day</span>幸福倒计时</div>
+      <div class="sec-rule"></div>
+    </div>
+    <div class="cd-panel reveal">
+      <div class="cd-caption">距我们的婚礼还有</div>
+      <div class="cd-grid">
+        <div class="cd-cell"><div class="cd-num" id="cdDays">00</div><div class="cd-unit">天</div></div>
+        <div class="cd-cell"><div class="cd-num" id="cdHours">00</div><div class="cd-unit">时</div></div>
+        <div class="cd-cell"><div class="cd-num" id="cdMins">00</div><div class="cd-unit">分</div></div>
+        <div class="cd-cell"><div class="cd-num" id="cdSecs">00</div><div class="cd-unit">秒</div></div>
+      </div>
+      <div class="cd-date">2026 年 10 月 23 日 · 我们不见不散</div>
+    </div>
+  </section>
+
+  <!-- ============ 5 相册 ============ -->
+  <section id="album" class="section">
+    <div class="section-head reveal">
+      <div class="eyebrow">Album</div>
+      <div class="sec-title"><span class="en">Our Moments</span>幸福相册</div>
+      <div class="sec-rule"></div>
+    </div>
+    <div class="album-grid" id="albumGrid">
+      <div class="ph reveal" data-caption="执子之手"><img src="https://aka.doubaocdn.com/s/7VSftIcrth" alt="婚纱照" loading="lazy"></div>
+      <div class="ph reveal" data-caption="与子偕老"><img src="https://aka.doubaocdn.com/s/vxKVy9YZiJ" alt="婚纱照" loading="lazy"></div>
+      <div class="ph reveal" data-caption="最美的遇见"><img src="https://aka.doubaocdn.com/s/QKWzn5EyUE" alt="婚纱照" loading="lazy"></div>
+      <div class="ph reveal" data-caption="余生请多指教"><img src="https://aka.doubaocdn.com/s/QcbQY8Ht7W" alt="婚纱照" loading="lazy"></div>
+      <div class="ph reveal" data-caption="幸福的模样"><img src="https://aka.doubaocdn.com/s/KqP57YqsaM" alt="婚纱照" loading="lazy"></div>
+      <div class="ph reveal" data-caption="我们的故事"><img src="https://aka.doubaocdn.com/s/45R2RFP5ZM" alt="婚纱照" loading="lazy"></div>
+    </div>
+    <p class="album-note reveal">点击照片可放大查看，记录我们的幸福瞬间</p>
+  </section>
+
+  <!-- ============ 7 婚礼流程 ============ -->
+  <section id="schedule" class="section">
+    <div class="section-head reveal">
+      <div class="eyebrow">Schedule</div>
+      <div class="sec-title"><span class="en">The Big Day</span>婚礼流程</div>
+      <div class="sec-rule"></div>
+    </div>
+    <div class="sch-card reveal">
+      <div class="sch-row">
+        <div class="sch-time">10:00<small>迎宾</small></div>
+        <div class="sch-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="3.2"/><path d="M5.5 20c.8-3.2 3.3-5 6.5-5s5.7 1.8 6.5 5"/></svg></div>
+        <div><div class="sch-name">宾客签到</div><div class="sch-desc">请凭本邀请函入场，欢迎留下祝福</div></div>
+      </div>
+      <div class="sch-row">
+        <div class="sch-time">11:00<small>仪式</small></div>
+        <div class="sch-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3v18M7 6h10M7 6l-2 6h4L7 6zm10 0 2 6h-4l2-6z"/><path d="M5 12h14"/></svg></div>
+        <div><div class="sch-name">婚礼仪式</div><div class="sch-desc">交换戒指、宣读誓言，见证幸福时刻</div></div>
+      </div>
+      <div class="sch-row">
+        <div class="sch-time">11:50<small>合影</small></div>
+        <div class="sch-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="6" width="18" height="13" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M6.5 17c.8-2 2-3 3.5-3s2.7 1 3.5 3"/><path d="M16 9h3M17 12h2"/></svg></div>
+        <div><div class="sch-name">合影留念</div><div class="sch-desc">与新人同框，定格这一天的美好</div></div>
+      </div>
+      <div class="sch-row">
+        <div class="sch-time">12:00<small>开席</small></div>
+        <div class="sch-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 21h14M7 21v-6h10v6M4 15h16l-1-6H5l-1 6zM8 9V4m4 5V3m4 6V4"/></svg></div>
+        <div><div class="sch-name">喜宴开席</div><div class="sch-desc">举杯共庆，与诸位把酒言欢</div></div>
+      </div>
+      <div class="sch-row">
+        <div class="sch-time">12:30<small>敬酒</small></div>
+        <div class="sch-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M8 21h8m-7-4 3-13h2l3 13h-2l-2-7-2 7H9z"/></svg></div>
+        <div><div class="sch-name">敬酒答谢</div><div class="sch-desc">新人逐桌敬酒，感谢您的到来</div></div>
+      </div>
+    </div>
+    <p class="info-tip reveal">以上为拟定流程，具体以现场安排为准</p>
+  </section>
+
+  <!-- ============ 8 出席回执 ============ -->
+  <section id="rsvp" class="section">
+    <div class="section-head reveal">
+      <div class="eyebrow">RSVP</div>
+      <div class="sec-title"><span class="en">See You There</span>出席回执</div>
+      <div class="sec-rule"></div>
+    </div>
+    <div class="rsvp-form reveal">
+      <form id="rsvpForm" novalidate>
+        <div class="f-group">
+          <label class="f-label" for="rsvpName">您的称呼 <b>*</b></label>
+          <input class="f-input" id="rsvpName" name="name" type="text" placeholder="请输入您的姓名" maxlength="20" required>
+        </div>
+        <div class="f-group">
+          <label class="f-label" for="rsvpCount">随行人数</label>
+          <select class="f-select" id="rsvpCount" name="count">
+            <option value="1">仅本人</option>
+            <option value="2">2 人</option>
+            <option value="3">3 人</option>
+            <option value="4">4 人</option>
+            <option value="5">5 人及以上</option>
+          </select>
+        </div>
+        <div class="f-group">
+          <span class="f-label">是否出席</span>
+          <div class="f-radio">
+            <label><input type="radio" name="attend" value="出席" checked><span>必定出席</span></label>
+            <label><input type="radio" name="attend" value="待定"><span>暂时待定</span></label>
+          </div>
+        </div>
+        <div class="f-group">
+          <label class="f-label" for="rsvpMsg">祝福留言（选填）</label>
+          <textarea class="f-textarea" id="rsvpMsg" name="msg" placeholder="写下您想对新人的祝福…" maxlength="100"></textarea>
+        </div>
+        <button class="submit-btn" type="submit">提 交 回 执</button>
+      </form>
+      <div class="rsvp-ok" id="rsvpOk">
+        <div class="heart"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21s-7.5-4.8-9.4-9.2C1 8 3 5 6 5c2 0 3.2 1.2 4 2.6C10.8 6.2 12 5 14 5c3 0 5 3 3.4 6.8C15.5 16.2 12 21 12 21z"/></svg></div>
+        <div class="ok-title">已收到您的回执</div>
+        <div class="ok-text">感谢您见证我们的幸福时刻<br>2026 年 10 月 23 日 · 我们不见不散</div>
+      </div>
+    </div>
+    <p class="rsvp-tip reveal">请于 2026 年 10 月 10 日前提交回执，以便我们安排席位</p>
+  </section>
+
+  <!-- ============ 9 一键导航 ============ -->
+  <section id="map" class="section">
+    <div class="section-head reveal">
+      <div class="eyebrow">Directions</div>
+      <div class="sec-title"><span class="en">Find the Way</span>一键导航</div>
+      <div class="sec-rule"></div>
+    </div>
+    <div class="map-card reveal">
+      <div class="map-banner">
+        <img src="https://aka.doubaocdn.com/s/5OliByYCkI" alt="酒店位置地图" loading="lazy">
+      </div>
+      <div class="map-info">
+        <div class="map-name">光山元平大酒店</div>
+        <div class="map-star">四星级宴会酒店 · 高德评分 4.5</div>
+        <div class="map-rows">
+          <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7.5-4.8-9.4-9.2C1 8 3 5 6 5c2 0 3.2 1.2 4 2.6C10.8 6.2 12 5 14 5c3 0 5 3 3.4 6.8C15.5 16.2 12 21 12 21z"/><circle cx="12" cy="10" r="2.4"/></svg><span>信阳市光山县 · 弦山街道光山国际会展中心 7 号楼</span></div>
+          <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 4h4l2 5-2.5 1.5a12 12 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg><span>咨询电话：0376-8668666</span></div>
+          <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 5h13a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H4z"/><path d="M4 7l8 6 8-6"/></svg><span>酒店门口设有免费停车场，停车便利</span></div>
+        </div>
+        <div class="map-btns">
+          <a class="map-btn primary" id="navBtn" href="#" role="button">一键导航</a>
+          <button class="map-btn ghost" id="copyAddr">复制地址</button>
+        </div>
+      </div>
+    </div>
+    <p class="map-tip reveal">导航将打开高德地图，也可手动搜索「光山元平大酒店」</p>
+  </section>
+
+  <!-- ============ 10 祝福留言 ============ -->
+  <section id="wishes" class="section">
+    <div class="section-head reveal">
+      <div class="eyebrow">Wishes</div>
+      <div class="sec-title"><span class="en">Words of Blessing</span>祝福留言</div>
+      <div class="sec-rule"></div>
+    </div>
+    <div class="wish-form reveal">
+      <input class="f-input" id="wishInput" type="text" placeholder="写下您的祝福（10~30字）" maxlength="30">
+      <button class="wish-send" id="wishSend">送出</button>
+    </div>
+    <div class="wish-list" id="wishList"></div>
+    <p class="rsvp-tip reveal">您的每一句祝福，都会珍藏进我们的婚礼纪念册</p>
+  </section>
+
+  <!-- ===== 结尾 ===== -->
+  <div class="finale">
+    <div class="script">With love</div>
+    <div class="serif">温鹏晖 &amp; 刘梦</div>
+    <svg class="heart" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21s-7.5-4.8-9.4-9.2C1 8 3 5 6 5c2 0 3.2 1.2 4 2.6C10.8 6.2 12 5 14 5c3 0 5 3 3.4 6.8C15.5 16.2 12 21 12 21z"/></svg>
+    <div class="thanks">感谢您耐心读完这份邀请<br>2026.10.23 · 期待与您共赴这场浪漫之约</div>
+    <div class="copy">W &amp; L · 婚礼邀请函</div>
+  </div>
+
+</div><!-- /stage -->
+
+<script>
+(function(){
+  "use strict";
+
+  /* ============ 背景音乐控制 ============ */
+  var audio = document.getElementById('bgMusic');
+  var musicBtn = document.getElementById('musicBtn');
+  var playing = false;
+  function toggleMusic(){
+    playing = !playing;
+    syncBtn();
+    if(playing){
+      var p = audio.play();
+      if(p && p.then){
+        p.catch(function(){
+          playing = false;
+          syncBtn();
+        });
+      }
+    }else{
+      audio.pause();
+    }
+  }
+  function syncBtn(){
+    if(playing){ musicBtn.classList.add('playing'); }
+    else{ musicBtn.classList.remove('playing'); }
+  }
+  musicBtn.addEventListener('click', toggleMusic);
+
+  /* 打开邀请：播放音乐并滚动到邀请函 */
+  var openBtn = document.getElementById('openBtn');
+  openBtn.addEventListener('click', function(){
+    toggleMusic();
+    setTimeout(function(){
+      window.scrollTo({ top: document.getElementById('invite').offsetTop - 8, behavior:'smooth' });
+    }, 120);
+  });
+
+  /* ============ 飘落花瓣 ============ */
+  var petalLayer = document.getElementById('petalLayer');
+  var P = 14;
+  for(var i=0;i<P;i++){
+    var p = document.createElement('span');
+    p.className = 'petal';
+    var size = 9 + Math.random()*9;
+    p.style.width = size + 'px';
+    p.style.height = (size*1.3) + 'px';
+    p.style.left = (Math.random()*100) + 'vw';
+    p.style.animationDuration = (11 + Math.random()*10) + 's';
+    p.style.animationDelay = (Math.random()*12) + 's';
+    p.style.opacity = 0;
+    petalLayer.appendChild(p);
+  }
+
+  /* ============ 倒计时 ============ */
+  var target = new Date('2026-10-23T00:00:00+08:00').getTime();
+  var elD = document.getElementById('cdDays');
+  var elH = document.getElementById('cdHours');
+  var elM = document.getElementById('cdMins');
+  var elS = document.getElementById('cdSecs');
+  function pad(n, w){ n = String(n); while(n.length < (w||2)){ n = '0' + n; } return n; }
+  function tick(){
+    var diff = target - Date.now();
+    if(diff < 0){ diff = 0; }
+    var d = Math.floor(diff/86400000);
+    var h = Math.floor(diff%86400000/3600000);
+    var m = Math.floor(diff%3600000/60000);
+    var s = Math.floor(diff%60000/1000);
+    elD.textContent = pad(d, 3);
+    elH.textContent = pad(h);
+    elM.textContent = pad(m);
+    elS.textContent = pad(s);
+  }
+  tick();
+  setInterval(tick, 1000);
+
+  /* ============ 滚动显现 ============ */
+  var revealEls = document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+    revealEls.forEach(function(el){ io.observe(el); });
+  }else{
+    revealEls.forEach(function(el){ el.classList.add('in'); });
+  }
+
+  /* ============ 相册灯箱 ============ */
+  var lightbox = document.getElementById('lightbox');
+  var lbImg = document.getElementById('lbImg');
+  var lbCaption = document.getElementById('lbCaption');
+  var albumGrid = document.getElementById('albumGrid');
+  albumGrid.addEventListener('click', function(e){
+    var ph = e.target.closest('.ph');
+    if(!ph) return;
+    var img = ph.querySelector('img');
+    lbImg.src = img.src;
+    lbCaption.textContent = ph.getAttribute('data-caption') || '';
+    lightbox.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  });
+  function closeLb(){
+    lightbox.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  lightbox.querySelector('.lb-close').addEventListener('click', closeLb);
+  lightbox.addEventListener('click', function(e){
+    if(e.target === lightbox){ closeLb(); }
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape'){ closeLb(); }
+  });
+
+  /* ============ 出席回执 ============ */
+  var rsvpForm = document.getElementById('rsvpForm');
+  var rsvpOk = document.getElementById('rsvpOk');
+  rsvpForm.addEventListener('submit', function(e){
+    e.preventDefault();
+    var name = document.getElementById('rsvpName').value.trim();
+    if(!name){
+      var input = document.getElementById('rsvpName');
+      input.style.borderColor = '#C9898F';
+      input.focus();
+      setTimeout(function(){ input.style.borderColor = ''; }, 1600);
+      return;
+    }
+    rsvpForm.style.display = 'none';
+    rsvpOk.classList.add('show');
+  });
+
+  /* ============ 一键导航（高德地图） ============ */
+  var navBtn = document.getElementById('navBtn');
+  var navUrl = 'https://uri.amap.com/navigation?to=114.882282,32.007674,%E5%85%89%E5%B1%B1%E5%85%83%E5%B9%B3%E5%A4%A7%E9%85%92%E5%BA%97&mode=car&coordinate=gaode&policy=1';
+  navBtn.addEventListener('click', function(e){
+    e.preventDefault();
+    window.location.href = navUrl;
+  });
+
+  /* 复制地址 */
+  var copyAddr = document.getElementById('copyAddr');
+  copyAddr.addEventListener('click', function(){
+    var addr = '信阳市光山县弦山街道光山国际会展中心7号楼·光山元平大酒店';
+    function done(){
+      copyAddr.textContent = '已复制';
+      setTimeout(function(){ copyAddr.textContent = '复制地址'; }, 1800);
+    }
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(addr).then(done).catch(function(){ fallbackCopy(addr, done); });
+    }else{
+      fallbackCopy(addr, done);
+    }
+  });
+  function fallbackCopy(text, done){
+    var ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.position = 'fixed';
+    ta.style.opacity = '0';
+    document.body.appendChild(ta);
+    ta.select();
+    try{ document.execCommand('copy'); done(); }catch(err){ /* ignore */ }
+    document.body.removeChild(ta);
+  }
+
+  /* ============ 祝福留言 ============ */
+  var wishInput = document.getElementById('wishInput');
+  var wishSend = document.getElementById('wishSend');
+  var wishList = document.getElementById('wishList');
+  var wishes = [
+    { who:'好友 · 阿哲', msg:'愿你们的爱情如美酒，越久越醇，白首不相离。' },
+    { who:'表姐 · 晓雯', msg:'祝福新郎新娘百年好合，永结同心，幸福美满！' },
+    { who:'大学室友 · 磊子', msg:'从校园到婚礼，见证你们一路走来，替你们开心！' }
+  ];
+  function renderWishes(){
+    wishList.innerHTML = '';
+    if(!wishes.length){
+      var empty = document.createElement('div');
+      empty.className = 'wish-empty';
+      empty.textContent = '还没有祝福，快来送出第一句吧';
+      wishList.appendChild(empty);
+      return;
+    }
+    wishes.forEach(function(w){
+      var card = document.createElement('div');
+      card.className = 'wish-card reveal in';
+      var who = document.createElement('div');
+      who.className = 'who';
+      who.textContent = w.who;
+      var msg = document.createElement('div');
+      msg.className = 'msg';
+      msg.textContent = w.msg;
+      card.appendChild(who);
+      card.appendChild(msg);
+      wishList.appendChild(card);
+    });
+  }
+  function addWish(){
+    var text = wishInput.value.trim();
+    if(text.length < 2){ wishInput.focus(); return; }
+    wishes.unshift({ who:'宾客 · 您', msg: text });
+    wishInput.value = '';
+    renderWishes();
+  }
+  wishSend.addEventListener('click', addWish);
+  wishInput.addEventListener('keydown', function(e){
+    if(e.key === 'Enter'){ e.preventDefault(); addWish(); }
+  });
+  renderWishes();
+
+})();
+</script>
+</body>
+</html>
